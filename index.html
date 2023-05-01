@@ -8,16 +8,15 @@
     <style>
         body{
             margin: 0;
-           
+            height: 100vh;
             background-color: silver;
         }
         .body {
-            height: 100vh;
             width: 500px;
             display: flex;
             flex-direction: column;
             height: 100%;
-            margin:auto
+            margin:auto;
         }
         .title {
             display: flex;
@@ -29,6 +28,7 @@
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 2em;
             font-weight: bold;
+            flex-shrink: 0;
         }
         .buttons {
             display: flex;
@@ -44,12 +44,14 @@
             justify-content: center;
             align-items: center;
             padding: 0;
+            min-height: 50px;
         }
         .grid {
             width: 500px;
             height: 500px;
             background-color: white;
             display: flex;
+            flex-shrink: 0;
         }
         .column, .row {
             flex-grow:1;
@@ -60,10 +62,16 @@
             flex-direction: column;
         }
 
-        .row {
-            
+        .footer {
+            flex-grow: 1;
+            border:1px dotted black;
+            flex-basis: 40px;
+            max-height:100px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-
     </style>
     <script src="script.js" defer></script>
 </head>
@@ -71,11 +79,11 @@
 <div class="body">
     <div class="title">Pixel Sketchpad</div>
     <div class="buttons">
-        <button>Reset board</button>
-        <button>Choose size</button>        
+        <button id = "reset">Reset board</button>
+        <button id = "size">Choose size</button>        
     </div>
     <div class="grid"></div>
-    <div class="footer"></div>
+    <div class="footer">Made by Rayyan®</div>
 </div>
 </body>
 </html>
