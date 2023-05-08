@@ -28,6 +28,27 @@ function size() {
     del()
     createGrid(answer)
 }
+function BLM(nigga, a, b, c) {
+    nigga.style.backgroundColor = `hsl(${a}, ${b}%, ${c}%)`
+}
+function lgbt() {
+    let units = document.querySelectorAll('.grid > div > div');
+    units.forEach(unit => {
+        var blackness = 0;
+        var h;
+        var s;
+        var l;
+        unit.addEventListener('mouseover', () => {    
+            blackness += 10;
+            h = Math.floor(Math.random() * 360);
+            s = Math.floor(Math.random() * 101);
+            l = 100 - blackness;
+            BLM(unit, h, s, l)
+        }) 
+    })
+}
+
 createGrid(16)
+lgbt()
 document.querySelector('#size').onclick = size;
 document.querySelector('#reset').onclick = reset;

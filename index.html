@@ -5,82 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body{
-            margin: 0;
-            height: 100vh;
-            background-color: silver;
-        }
-        .body {
-            width: 500px;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            margin:auto;
-        }
-        .title {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 60px;
-            color:white;
-            background-color: rgb(0, 0, 0);
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: 2em;
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-        .buttons {
-            display: flex;
-        }
-        button {
-            font-family: "Jetbrains mono", monospace;
-            height: 80px;
-            flex-basis: 50%;
-            font-size: 2em;
-            font-weight: bold; 
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0;
-            min-height: 50px;
-        }
-        .grid {
-            width: 500px;
-            height: 500px;
-            background-color: white;
-            display: flex;
-            flex-shrink: 0;
-        }
-        .column, .row {
-            flex-grow:1;
-        }
-
-        .column {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .footer {
-            flex-grow: 1;
-            border:1px dotted black;
-            flex-basis: 40px;
-            max-height:100px;
-            flex-shrink: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
 <div class="body">
     <div class="title">Pixel Sketchpad</div>
     <div class="buttons">
-        <button id = "reset">Reset board</button>
-        <button id = "size">Choose size</button>        
+        <button id = "reset">Reset</button>
+        <button id = "size">Size</button>   
+        <button id = "lgbt" onclick="lgbt()">Rainbow</button>  
+        <button></button>   
     </div>
     <div class="grid"></div>
     <div class="footer">Made by Rayyan®</div>
