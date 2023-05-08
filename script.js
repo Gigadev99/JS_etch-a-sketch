@@ -1,7 +1,7 @@
 const grid = document.querySelector('.grid');
 
 function reset() {
-    document.querySelectorAll('.grid > div > div').forEach(div => div.style.backgroundColor = 'white');   
+    document.querySelectorAll('.grid > div > div').forEach(div => div.style.backgroundColor = 'white');  
 }
 function del() {
     document.querySelectorAll('.grid div').forEach(div => div.remove());   
@@ -31,8 +31,16 @@ function size() {
 function BLM(nigga, a, b, c) {
     nigga.style.backgroundColor = `hsl(${a}, ${b}%, ${c}%)`
 }
-function lgbt() {
+var blackflag = 0
+function lgbt(q) {
+    q.target.classList.toggle('clicked')
+    document.querySelector('#come').classList.remove('clicked')
+    blackflag += 1;
     let units = document.querySelectorAll('.grid > div > div');
+    if (blackflag % 2 == 0) {
+        units.forEach(unit => unit.addEventListener('mouseover', () => unit.style.backgroundColor = "black"))
+        return
+    }
     units.forEach(unit => {
         var blackness = 0;
         var h;
@@ -46,9 +54,16 @@ function lgbt() {
             BLM(unit, h, s, l)
         }) 
     })
+} 
+
+function come() {
+    let units = document.querySelectorAll('.grid > div > div');
+    units.forEach(unit => unit.addEventListener('mouseover', () => unit.style.backgroundColor = "white"))
+    document.querySelector('#come').classList.toggle('clicked')
 }
 
 createGrid(16)
-lgbt()
 document.querySelector('#size').onclick = size;
 document.querySelector('#reset').onclick = reset;
+document.querySelector('#lgbt').onclick = lgbt;
+document.querySelector('#come').onclick = come;

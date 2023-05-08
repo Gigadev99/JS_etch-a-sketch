@@ -65,3 +65,6 @@ button {
     align-items: center;
     font-size: 50%;
 }
+.clicked {
+    background-color: hsl(0, 0%, 74%);
+}
