@@ -1,7 +1,7 @@
 const grid = document.querySelector('.grid');
-
+var blackflag = 0;
 function reset() {
-    document.querySelectorAll('.grid > div > div').forEach(div => div.style.backgroundColor = 'white');  
+    document.querySelectorAll('.grid > div > div').forEach(div => div.style.backgroundColor = 'white');
 }
 function del() {
     document.querySelectorAll('.grid div').forEach(div => div.remove());   
@@ -27,11 +27,14 @@ function size() {
     }
     del()
     createGrid(answer)
+    document.querySelector('#lgbt').classList.remove('clicked')
+    document.querySelector('#come').classList.remove('clicked')
+    blackflag = 0
 }
 function BLM(nigga, a, b, c) {
     nigga.style.backgroundColor = `hsl(${a}, ${b}%, ${c}%)`
 }
-var blackflag = 0
+
 function lgbt(q) {
     q.target.classList.toggle('clicked')
     document.querySelector('#come').classList.remove('clicked')
